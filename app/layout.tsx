@@ -5,7 +5,7 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "Rodrigo Silva - Backend Developer & Data Specialist Portfolio",
   description:
-    "Backend Developer specializing in data infrastructure, SQL, REST APIs, Docker, AWS, and cloud technologies. Experience at MEO, CEDIS, Johnson & Johnson, and WEG. Based in Lisbon, Portugal.",
+    "Backend Developer specializing in data infrastructure, SQL, REST APIs, Docker, technologies. Experience at MEO, CEDIS, Johnson & Johnson, and WEG. Based in Lisbon, Portugal.",
   keywords: [
     "Backend Developer",
     "Data Specialist",
