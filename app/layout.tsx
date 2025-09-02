@@ -128,7 +128,7 @@ export default function RootLayout({
               "@type": "Person",
               "name": "Rodrigo Silva",
               "jobTitle": "Backend Developer & Data Specialist",
-              "description": "Backend Developer specializing in data infrastructure, SQL, REST APIs, Docker, AWS, and cloud technologies.",
+              "description": "Backend Developer specializing in data infrastructure, SQL, REST APIs, Docker, AWS, technologies.",
               "url": "https://rodrigo-portfolio.vercel.app",
               "sameAs": [
                 "https://www.linkedin.com/in/rodrigo-hipolito1/"
