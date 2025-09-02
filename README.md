@@ -32,7 +32,6 @@ Deploy this portfolio to Vercel, Netlify, or any modern hosting platform that su
 - TypeScript
 - Tailwind CSS
 - Framer Motion
-- Radix UI Components
 
 ## Contact
 
