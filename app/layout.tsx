@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Rodrigo Silva - Backend Developer & Data Specialist",
-    description: "Backend Developer specializing in data infrastructure, SQL, REST APIs, Docker, AWS, and cloud technologies. Experience at MEO, CEDIS, Johnson & Johnson, and WEG.",
+    description: "Backend Developer specializing in data infrastructure, SQL, REST APIs, Docker, technologies. Experience at MEO, CEDIS, Johnson & Johnson, and WEG.",
     url: "https://rodrigo-portfolio.vercel.app",
     siteName: "Rodrigo Silva Portfolio",
     images: [
