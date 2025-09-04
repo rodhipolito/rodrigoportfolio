@@ -71,8 +71,8 @@ export default function Page() {
                 />
 
                 <p className="mt-4 max-w-[42ch] text-lg text-white/70">
-                  Rodrigo is a Backend Developer based in Lisbon, Portugal. He specializes in data infrastructure,
-                  system integration, and building scalable backend solutions.
+                  Rodrigo is a Backend Developer based in Lisbon, Portugal. with experience in data infrastructure,
+                  system integration, and scalable backend solutions.
                 </p>
 
                 <div className="mt-6 flex flex-wrap items-center gap-4">
