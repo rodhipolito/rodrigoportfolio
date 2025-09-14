@@ -109,7 +109,7 @@ export default function Page() {
                   </Link>
                   
                   <Link 
-                    href="/rodrigoCV.pdf"
+                    href="/RodrigoSilva_CV.pdf"
                     target="_blank"
                     download="Rodrigo_Silva_CV.pdf"
                     className="flex items-center gap-2 text-white/70 hover:text-white transition-colors"
