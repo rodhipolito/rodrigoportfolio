@@ -13,7 +13,7 @@ export default function Page() {
     {
       title: "Taskly — Helpdesk Platform",
       subtitle: ".NET 8, React, PostgreSQL (Supabase)",
-      imageSrc: "project-1.webp",
+      imageSrc: "/images/project-1.webp",
       tags: [".NET", "React", "PostgreSQL", "Supabase", "JWT"],
       href: "https://tickets-manager-api.vercel.app",
       priority: true,
