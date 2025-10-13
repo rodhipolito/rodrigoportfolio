@@ -11,6 +11,17 @@ import RevealOnView from "@/components/reveal-on-view"
 export default function Page() {
   const projects = [
     {
+      title: "Taskly — Helpdesk Platform",
+      subtitle: ".NET 8, React, PostgreSQL (Supabase)",
+      imageSrc: "/images/project-taskly.webp", // ou o nome da imagem que escolheu
+      tags: [".NET", "React", "PostgreSQL", "Supabase", "JWT"],
+      href: "https://tickets-manager-api.vercel.app",
+      priority: true,
+      gradientFrom: "#111827",
+      gradientTo: "#4f46e5",
+    },
+    
+    {
       title: "Currency Converter",
       subtitle: "JavaScript React",
       imageSrc: "/images/project-1.webp",
