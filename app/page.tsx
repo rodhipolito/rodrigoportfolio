@@ -27,7 +27,7 @@ export default function Page() {
       imageSrc: "/images/project-1.webp",
       tags: ["React", "JavaScript", "API"],
       href: "https://firstcurrencyconverter.netlify.app",
-      priority: true,
+      priority: false,
       gradientFrom: "#0f172a",
       gradientTo: "#6d28d9",
     },
