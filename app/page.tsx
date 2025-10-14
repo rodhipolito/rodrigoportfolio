@@ -78,7 +78,7 @@ export default function Page() {
 
                 <AnimatedHeading
                   className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl"
-                  lines={["Backend Developer", "& Data Specialist"]}
+                  lines={["Backend Developer", "& Data Solutions"]}
                 />
 
                 <p className="mt-4 max-w-[42ch] text-lg text-white/70">
