@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Backend Developer specializing in data infrastructure, SQL, REST APIs, Docker, technologies. Experience at MEO, CEDIS, Johnson & Johnson, and WEG. Based in Lisbon, Portugal.",
   keywords: [
     "Backend Developer",
-    "Data Specialist",
+    "Data Solutions",
     "SQL Developer",
     "REST API Developer",
     "Docker Engineer",
