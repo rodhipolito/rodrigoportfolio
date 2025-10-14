@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Rodrigo Silva - Backend Developer & Data Specialist",
+    title: "Rodrigo Silva - Backend Developer & Data Solutions",
     description: "Backend Developer specializing in data infrastructure, SQL, REST APIs, Docker, technologies. Experience at MEO, CEDIS, Johnson & Johnson, and WEG.",
     url: "https://rodrigo-portfolio.vercel.app",
     siteName: "Rodrigo Silva Portfolio",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rodrigo Silva - Backend Developer & Data Specialist",
+    title: "Rodrigo Silva - Backend Developer & Data Solution",
     description: "Backend Developer specializing in data infrastructure, SQL, REST APIs, Docker, AWS, and cloud technologies.",
     images: ["/images/portfolio-sample.png"],
     creator: "@rodrigosilva",
@@ -127,7 +127,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Rodrigo Silva",
-              "jobTitle": "Backend Developer & Data Specialist",
+              "jobTitle": "Backend Developer & Data Solutions",
               "description": "Backend Developer specializing in data infrastructure, SQL, REST APIs, Docker, AWS, technologies.",
               "url": "https://rodrigo-portfolio.vercel.app",
               "sameAs": [
