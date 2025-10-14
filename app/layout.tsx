@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Rodrigo Silva - Backend Developer & Data Specialist Portfolio",
+  title: "Rodrigo Silva - Backend Developer & Data Solutions Portfolio",
   description:
     "Backend Developer specializing in data infrastructure, SQL, REST APIs, Docker, technologies. Experience at MEO, CEDIS, Johnson & Johnson, and WEG. Based in Lisbon, Portugal.",
   keywords: [
