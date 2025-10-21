@@ -11,8 +11,6 @@ export const metadata: Metadata = {
     "Data Solutions",
     "SQL Developer",
     "REST API Developer",
-    "Docker Engineer",
-    "AWS Developer",
     "Node.js Developer",
     "Java Developer",
     "Database Developer",
@@ -57,7 +55,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Rodrigo Silva - Backend Developer & Data Solution",
-    description: "Backend Developer specializing in data infrastructure, SQL, REST APIs, Docker, AWS, and cloud technologies.",
+    description: "Backend Developer specializing in data infrastructure, SQL, REST APIs, Docker, and cloud technologies.",
     images: ["/images/portfolio-sample.png"],
     creator: "@rodrigosilva",
   },
