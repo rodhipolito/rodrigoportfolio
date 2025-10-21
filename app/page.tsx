@@ -141,7 +141,7 @@ export default function Page() {
                       </h3>
                       <p className="text-xs text-white/60">MEO • Mar 2023 - Present • Lisbon</p>
                       <p className="mt-1 text-xs text-white/50">
-                        Led data structure initiatives using SQL, REST APIs, Docker and AWS
+                        Led data structure initiatives using SQL, REST APIs.
                       </p>
                     </div>
                     <div>
