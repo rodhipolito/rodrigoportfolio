@@ -162,7 +162,7 @@ export default function Page() {
                 <div className="mt-8">
                   <p className="mb-3 text-xs font-semibold tracking-widest text-white/50">TECHNICAL SKILLS</p>
                   <div className="flex flex-wrap gap-2">
-                    {["SQL", "REST APIs", "Docker", "AWS", "Node.js", "React", "TypeScript", "Git", "Java"].map(
+                    {["SQL", "REST APIs","Node.js", "React", "TypeScript", "Git", "Java"].map(
                       (skill) => (
                         <span key={skill} className="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70">
                           {skill}
