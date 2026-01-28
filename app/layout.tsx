@@ -149,7 +149,7 @@ export default function RootLayout({
                 }
               ],
               "knowsAbout": [
-                "SQL", "REST APIs", "Docker", "AWS", "Node.js", "React", "TypeScript", "Git", ".NET"
+                "SQL", "REST APIs", "Docker", "AWS", "Node.js", "React", "JavaScript", "Git", ".NET"
               ],
               "address": {
                 "@type": "PostalAddress",
