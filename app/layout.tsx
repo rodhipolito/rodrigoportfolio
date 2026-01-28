@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "SQL Developer",
     "REST API Developer",
     "Node.js Developer",
-    "Java Developer",
+    ".NET Developer",
     "Database Developer",
     "Infrastructure Engineer",
     "System Integration",
@@ -149,7 +149,7 @@ export default function RootLayout({
                 }
               ],
               "knowsAbout": [
-                "SQL", "REST APIs", "Docker", "AWS", "Node.js", "React", "TypeScript", "Git", "Java"
+                "SQL", "REST APIs", "Docker", "AWS", "Node.js", "React", "TypeScript", "Git", ".NET"
               ],
               "address": {
                 "@type": "PostalAddress",
