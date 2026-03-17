@@ -10,49 +10,57 @@ import RevealOnView from "@/components/reveal-on-view"
 
 export default function Page() {
   const projects = [
-    {
-      title: "Taskly — Helpdesk Platform",
-      subtitle: ".NET 8, React, PostgreSQL (Supabase)",
-      imageSrc: "/images/project-4.webp",
-      tags: [".NET", "React", "PostgreSQL", "Supabase", "JWT"],
-      href: "https://tickets-manager-api.vercel.app",
-      priority: true,
-      gradientFrom: "#111827",
-      gradientTo: "#4f46e5",
-    },
-    
-    {
-      title: "Currency Converter",
-      subtitle: "JavaScript React",
-      imageSrc: "/images/project-1.webp",
-      tags: ["React", "JavaScript", "API"],
-      href: "https://firstcurrencyconverter.netlify.app",
-      priority: false,
-      gradientFrom: "#0f172a",
-      gradientTo: "#6d28d9",
-    },
-    {
-      title: "Login",
-      subtitle: "HTML, CSS, Javascript",
-      imageSrc: "/images/project-2.webp",
-      tags: ["HTML", "CSS", "JavaScript"],
-      href: "https://loginmodern.netlify.app",
-      priority: false,
-      gradientFrom: "#111827",
-      gradientTo: "#2563eb",
-    },
-    {
-      title: "Catalogo Netflix",
-      subtitle: "Javascript, React",
-      imageSrc: "/images/project-3.webp",
-      tags: ["React", "Bootstrap", "JavaScript"],
-      href: "https://catalogoflix.netlify.app",
-      priority: false,
-      gradientFrom: "#0b132b",
-      gradientTo: "#5bc0be",
-    },
-  ]
-
+  {
+    title: "Financial Transaction API",
+    subtitle: "ASP.NET Core 8, PostgreSQL, JWT",
+    imageSrc: "/images/project-5.webp",
+    tags: ["ASP.NET Core", "Entity Framework", "PostgreSQL", "JWT", "Railway"],
+    href: "https://financial-transaction-frontend-six.vercel.app/",
+    priority: true,
+    gradientFrom: "#0f2027",
+    gradientTo: "#203a43",
+  },
+  {
+    title: "Taskly — Helpdesk Platform",
+    subtitle: ".NET 8, React, PostgreSQL (Supabase)",
+    imageSrc: "/images/project-4.webp",
+    tags: [".NET", "React", "PostgreSQL", "Supabase", "JWT"],
+    href: "https://tickets-manager-api.vercel.app",
+    priority: false,
+    gradientFrom: "#111827",
+    gradientTo: "#4f46e5",
+  },
+  {
+    title: "Currency Converter",
+    subtitle: "JavaScript React",
+    imageSrc: "/images/project-1.webp",
+    tags: ["React", "JavaScript", "API"],
+    href: "https://firstcurrencyconverter.netlify.app",
+    priority: false,
+    gradientFrom: "#0f172a",
+    gradientTo: "#6d28d9",
+  },
+  {
+    title: "Login",
+    subtitle: "HTML, CSS, Javascript",
+    imageSrc: "/images/project-2.webp",
+    tags: ["HTML", "CSS", "JavaScript"],
+    href: "https://loginmodern.netlify.app",
+    priority: false,
+    gradientFrom: "#111827",
+    gradientTo: "#2563eb",
+  },
+  {
+    title: "Catalogo Netflix",
+    subtitle: "Javascript, React",
+    imageSrc: "/images/project-3.webp",
+    tags: ["React", "Bootstrap", "JavaScript"],
+    href: "https://catalogoflix.netlify.app",
+    priority: false,
+    gradientFrom: "#0b132b",
+    gradientTo: "#5bc0be",
+  },
+]
   return (
     <main className="bg-neutral-950 text-white">
       {/* HERO: full-viewport row. Left is sticky; right scrolls internally. */}
