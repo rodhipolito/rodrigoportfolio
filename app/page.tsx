@@ -20,6 +20,16 @@ export default function Page() {
     gradientFrom: "#0f2027",
     gradientTo: "#203a43",
   },
+      {
+    title: "Fuel Prices — World vs Asia",
+    subtitle: "Python, Streamlit, Plotly",
+    imageSrc: "/images/project-3.webp",
+    tags: ["Python", "Streamlit", "Plotly", "Kaggle"],
+    href: "https://fuel-prices-wordvsasia.streamlit.app/",
+    priority: false,
+    gradientFrom: "#0f2027",
+    gradientTo: "#1a3a2a",
+  },
   {
     title: "Taskly — Helpdesk Platform",
     subtitle: ".NET 8, React, PostgreSQL (Supabase)",
@@ -53,7 +63,7 @@ export default function Page() {
   {
     title: "Catalogo Netflix",
     subtitle: "Javascript, React",
-    imageSrc: "/images/project-3.webp",
+    imageSrc: "/images/project-6.webp",
     tags: ["React", "Bootstrap", "JavaScript"],
     href: "https://catalogoflix.netlify.app",
     priority: false,
