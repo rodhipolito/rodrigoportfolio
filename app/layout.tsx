@@ -3,20 +3,20 @@ import type { Metadata } from "next"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Rodrigo Silva - Backend Developer & Data Solutions Portfolio",
+  title: "Rodrigo Silva - Data & Analytics Engineer",
   description:
-    "Backend Developer specializing in data infrastructure, SQL, REST APIs, Docker, technologies. Experience at MEO, CEDIS, Johnson & Johnson, and WEG. Based in Lisbon, Portugal.",
+    "Data & Analytics Engineer specializing in SQL Server, T-SQL, ETL pipelines, Power BI/DAX and dimensional modeling. Experience at MEO/Altice Portugal, CEDIS, Johnson & Johnson and WEG. Based in Lisbon, Portugal.",
   keywords: [
-    "Backend Developer",
-    "Data Solutions",
-    "SQL Developer",
-    "REST API Developer",
-    "Node.js Developer",
-    ".NET Developer",
-    "Database Developer",
-    "Infrastructure Engineer",
-    "System Integration",
-    "Cloud Technologies",
+    "Analytics Engineer",
+    "Data Engineer",
+    "SQL Server",
+    "T-SQL",
+    "ETL",
+    "Power BI",
+    "DAX",
+    "dbt",
+    "Dimensional Modeling",
+    "Data Pipelines",
     "Portugal",
     "Lisbon",
     "MEO",
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Rodrigo Silva - Backend Developer & Data Solutions",
-    description: "Backend Developer specializing in data infrastructure, SQL, REST APIs, Docker, technologies. Experience at MEO, CEDIS, Johnson & Johnson, and WEG.",
+    title: "Rodrigo Silva - Data & Analytics Engineer",
+    description: "Data & Analytics Engineer specializing in SQL Server, T-SQL, ETL pipelines, Power BI/DAX and dimensional modeling. Experience at MEO/Altice Portugal, CEDIS, Johnson & Johnson and WEG.",
     url: "https://rodrigo-portfolio.vercel.app",
     siteName: "Rodrigo Silva Portfolio",
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
         url: "/images/portfolio-sample.png",
         width: 1200,
         height: 630,
-        alt: "Rodrigo Silva - Backend Developer Portfolio",
+        alt: "Rodrigo Silva - Data & Analytics Engineer Portfolio",
       },
     ],
     locale: "en_US",
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rodrigo Silva - Backend Developer & Data Solution",
-    description: "Backend Developer specializing in data infrastructure, SQL, REST APIs, Docker, and cloud technologies.",
+    title: "Rodrigo Silva - Data & Analytics Engineer",
+    description: "Data & Analytics Engineer specializing in SQL Server, T-SQL, ETL pipelines, Power BI/DAX and dimensional modeling.",
     images: ["/images/portfolio-sample.png"],
     creator: "@rodrigosilva",
   },
@@ -125,8 +125,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Rodrigo Silva",
-              "jobTitle": "Backend Developer & Data Solutions",
-              "description": "Backend Developer specializing in data infrastructure, SQL, REST APIs, Docker, technologies.",
+              "jobTitle": "Data & Analytics Engineer",
+              "description": "Data & Analytics Engineer specializing in SQL Server, T-SQL, ETL pipelines, Power BI/DAX and dimensional modeling.",
               "url": "https://rodrigo-portfolio.vercel.app",
               "sameAs": [
                 "https://www.linkedin.com/in/rodrigo-hipolito1/"
@@ -134,22 +134,27 @@ export default function RootLayout({
               "worksFor": [
                 {
                   "@type": "Organization",
-                  "name": "MEO",
+                  "name": "MEO / Altice Portugal",
                   "jobTitle": "Technical Specialist – Infrastructure and Data"
                 },
                 {
-                  "@type": "Organization", 
+                  "@type": "Organization",
                   "name": "CEDIS",
-                  "jobTitle": "Software Developer (CRM & Databases)"
+                  "jobTitle": "Software Developer – CRM & Databases"
                 },
                 {
                   "@type": "Organization",
                   "name": "Johnson & Johnson",
-                  "jobTitle": "Software Analyst – Manufacturing Systems"
+                  "jobTitle": "Software Analyst – Manufacturing Systems (MES)"
+                },
+                {
+                  "@type": "Organization",
+                  "name": "WEG Electronic Equipments",
+                  "jobTitle": "Systems Support Analyst – ERP & IT Services"
                 }
               ],
               "knowsAbout": [
-                "SQL", "REST APIs", "Docker", "AWS", "Node.js", "React", "JavaScript", "Git", ".NET"
+                "SQL Server", "T-SQL", "ETL Pipelines", "Dimensional Modeling", "Power BI", "DAX", "dbt", "SAP ERP", "Microsoft Dynamics CRM", "ServiceNow", "Salesforce", "VBA", "REST APIs", "Git", "ASP.NET Core", "Node.js", "TypeScript"
               ],
               "address": {
                 "@type": "PostalAddress",

@@ -96,12 +96,11 @@ export default function Page() {
 
                 <AnimatedHeading
                   className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl"
-                  lines={["Backend Developer"]}
+                  lines={["Data & Analytics Engineer"]}
                 />
 
                 <p className="mt-4 max-w-[42ch] text-lg text-white/70">
-                  Backend Developer based in Lisbon, Portugal. with experience in data infrastructure,
-                  system integration, and scalable backend solutions.
+                  Data & Analytics Engineer based in Lisbon, Portugal, with 3+ years in SQL Server, ETL pipelines, dimensional modeling and Power BI / DAX across telecommunications and consulting sectors.
                 </p>
 
                 <div className="mt-6 flex flex-wrap items-center gap-4">
@@ -152,27 +151,46 @@ export default function Page() {
 
                 <div className="mt-10">
                   <p className="mb-4 text-xs font-semibold tracking-widest text-white/50">EXPERIENCE</p>
-                  <div className="space-y-4">
+                  <div className="space-y-6">
                     <div>
                       <h3 className="text-sm font-semibold text-white">
                         Technical Specialist – Infrastructure and Data
                       </h3>
-                      <p className="text-xs text-white/60">MEO • Mar 2023 - Present • Lisbon</p>
-                      <p className="mt-1 text-xs text-white/50">
-                        Led data structure initiatives using SQL, REST APIs.
-                      </p>
+                      <p className="text-xs text-white/60">MEO / Altice Portugal • Mar 2023 – Present • Lisbon</p>
+                      <ul className="mt-2 space-y-1 list-disc list-inside">
+                        <li className="text-xs text-white/50">Designed and maintained dimensional data models and Power BI / DAX dashboards, delivering consistent sales analytics across commercial teams and supporting data-driven decision-making.</li>
+                        <li className="text-xs text-white/50">Built and maintained ETL pipelines in SQL Server (T-SQL, stored procedures, SQL Agent Jobs), ensuring data consistency, reliability and quality across telecom infrastructure.</li>
+                        <li className="text-xs text-white/50">Migrated data pipelines from Access to SQL Server, improving scalability and reducing manual dependency on legacy systems.</li>
+                        <li className="text-xs text-white/50">Automated operational data workflows using VBA, Macros and SharePoint, significantly reducing manual effort and improving process efficiency.</li>
+                        <li className="text-xs text-white/50">Supported data integration initiatives across enterprise systems, contributing to improved data structure and system scalability.</li>
+                      </ul>
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold text-white">Software Developer (CRM & Databases)</h3>
-                      <p className="text-xs text-white/60">CEDIS • Dec 2022 - Mar 2023 • Lisbon</p>
-                      <p className="mt-1 text-xs text-white/50">Maintained SQL Server databases and web applications</p>
+                      <h3 className="text-sm font-semibold text-white">Software Developer – CRM & Databases</h3>
+                      <p className="text-xs text-white/60">CEDIS • Dec 2022 – Mar 2023 • Lisbon</p>
+                      <ul className="mt-2 space-y-1 list-disc list-inside">
+                        <li className="text-xs text-white/50">Maintained and optimized SQL Server databases using SSMS, performing data corrections, quality checks and troubleshooting to ensure data integrity.</li>
+                        <li className="text-xs text-white/50">Provided technical support and customization for Microsoft Dynamics CRM, ensuring data accuracy and system reliability across client organizations.</li>
+                        <li className="text-xs text-white/50">Collaborated with sports centers and municipal councils on data accuracy initiatives, supporting consistent reporting and operational continuity.</li>
+                      </ul>
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold text-white">Software Analyst – Manufacturing Systems</h3>
-                      <p className="text-xs text-white/60">Johnson & Johnson • May 2022 - Dec 2022 • São Paulo</p>
-                      <p className="mt-1 text-xs text-white/50">
-                        Supported Manufacturing Execution System (MES) projects
-                      </p>
+                      <h3 className="text-sm font-semibold text-white">Software Analyst – Manufacturing Systems (MES)</h3>
+                      <p className="text-xs text-white/60">Johnson & Johnson (AS2 Group) • May 2022 – Nov 2022 • São Paulo</p>
+                      <ul className="mt-2 space-y-1 list-disc list-inside">
+                        <li className="text-xs text-white/50">Gathered and analyzed data requirements to support a Manufacturing Execution System (MES) implementation, aligning technical solutions with operational needs.</li>
+                        <li className="text-xs text-white/50">Supported automation of manufacturing data flows, ensuring integration between MES and enterprise systems (ERP/APIs).</li>
+                        <li className="text-xs text-white/50">Assisted in configuration and validation of MES environment, contributing to system reliability and data accuracy in a regulated manufacturing context.</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-semibold text-white">Systems Support Analyst – ERP & IT Services</h3>
+                      <p className="text-xs text-white/60">WEG Electronic Equipments • May 2021 – Apr 2022</p>
+                      <ul className="mt-2 space-y-1 list-disc list-inside">
+                        <li className="text-xs text-white/50">Managed and resolved incidents through ServiceNow and Salesforce, ensuring SLA compliance and consistent service delivery across enterprise operations.</li>
+                        <li className="text-xs text-white/50">Executed controlled changes in SAP ERP systems (ChaRM process) across DEV and QA environments, contributing to data consistency and system stability.</li>
+                        <li className="text-xs text-white/50">Collaborated with technical teams on backlog management and process improvements, supporting operational continuity.</li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -180,7 +198,7 @@ export default function Page() {
                 <div className="mt-8">
                   <p className="mb-3 text-xs font-semibold tracking-widest text-white/50">TECHNICAL SKILLS</p>
                   <div className="flex flex-wrap gap-2">
-                    {["SQL", "REST APIs","Node.js", "React", "JavaScript", "Git", ".NET"].map(
+                    {["SQL Server", "T-SQL", "ETL Pipelines", "Dimensional Modeling", "Power BI", "DAX", "dbt (learning)", "SAP ERP", "Microsoft Dynamics CRM", "ServiceNow", "Salesforce", "VBA", "REST APIs", "Git", "ASP.NET Core", "Node.js", "TypeScript"].map(
                       (skill) => (
                         <span key={skill} className="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70">
                           {skill}
