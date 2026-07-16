@@ -1,270 +1,463 @@
+import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
-import DotGridShader from "@/components/DotGridShader"
+import SiteNav from "@/components/site-nav"
 
-import ProjectCard from "@/components/project-card"
-import AnimatedHeading from "@/components/animated-heading"
-import RevealOnView from "@/components/reveal-on-view"
+const kpis = [
+  { value: "4+", label: "years in data" },
+  { value: "6+", label: "years in tech" },
+  { value: "5", label: "companies" },
+  { value: "17+", label: "technologies" },
+  { value: "EN / PT", label: "languages" },
+]
 
-export default function Page() {
-  const projects = [
+type Experience = {
+  role: string
+  org: string
+  period: string
+  location: string | null
+  current: boolean
+  bullets: string[]
+  tags?: string[]
+}
+
+const experience: Experience[] = [
   {
-    title: "Financial Transaction API",
-    subtitle: "ASP.NET Core 8, PostgreSQL, JWT",
-    imageSrc: "/images/project-5.webp",
-    tags: ["ASP.NET Core", "Entity Framework", "PostgreSQL", "JWT", "Railway"],
-    href: "https://financial-transaction-frontend-six.vercel.app/",
-    priority: true,
-    gradientFrom: "#0f2027",
-    gradientTo: "#203a43",
+    role: "Technical Specialist – Infrastructure and Data",
+    org: "MEO / Altice Portugal",
+    period: "Mar 2023 – Present",
+    location: "Lisbon",
+    current: true,
+    bullets: [
+      "Designed and maintained dimensional data models and Power BI / DAX dashboards, delivering consistent sales analytics across commercial teams and supporting data-driven decision-making.",
+      "Built and maintained ETL pipelines in SQL Server (T-SQL, stored procedures, SQL Agent Jobs), ensuring data consistency, reliability and quality across telecom infrastructure.",
+      "Migrated data pipelines from Access to SQL Server, improving scalability and reducing manual dependency on legacy systems.",
+      "Automated operational data workflows using VBA, Macros and SharePoint, significantly reducing manual effort and improving process efficiency.",
+      "Supported data integration initiatives across enterprise systems, contributing to improved data structure and system scalability.",
+    ],
+    tags: ["SharePoint", "Power BI", "PBIRS", "Excel", "Salesforce", "VBA", "Macros"],
   },
-      {
+  {
+    role: "Software Developer – CRM & Databases",
+    org: "CEDIS",
+    period: "Dec 2022 – Mar 2023",
+    location: "Lisbon",
+    current: false,
+    bullets: [
+      "Maintained and optimized SQL Server databases using SSMS, performing data corrections, quality checks and troubleshooting to ensure data integrity.",
+      "Provided technical support and customization for Microsoft Dynamics CRM, ensuring data accuracy and system reliability across client organizations.",
+      "Collaborated with sports centers and municipal councils on data accuracy initiatives, supporting consistent reporting and operational continuity.",
+    ],
+    tags: ["HTML", "CSS", "JavaScript", "Microsoft SQL Server"],
+  },
+  {
+    role: "Software Analyst – Manufacturing Systems (MES)",
+    org: "Johnson & Johnson (AS2 Group)",
+    period: "May 2022 – Nov 2022",
+    location: "São Paulo",
+    current: false,
+    bullets: [
+      "Gathered and analyzed data requirements to support a Manufacturing Execution System (MES) implementation, aligning technical solutions with operational needs.",
+      "Supported automation of manufacturing data flows, ensuring integration between MES and enterprise systems (ERP/APIs).",
+      "Assisted in configuration and validation of MES environment, contributing to system reliability and data accuracy in a regulated manufacturing context.",
+    ],
+    tags: ["MES (Manufacturing Execution System)", "Microsoft SQL Server", "Power BI"],
+  },
+  {
+    role: "Systems Support Analyst – ERP & IT Services",
+    org: "Algar Tech · Outsourcing Itaú Unibanco",
+    period: "Feb 2021 – May 2022 · 1 yr 4 mos",
+    location: "São José dos Campos, SP · Remote",
+    current: false,
+    bullets: [
+      "Managed and resolved incidents through ServiceNow and Salesforce, ensuring SLA compliance and consistent service delivery across enterprise operations.",
+      "Executed controlled changes in SAP ERP systems (ChaRM process) across DEV and QA environments, contributing to data consistency and system stability.",
+      "Collaborated with technical teams on backlog management and process improvements, supporting operational continuity.",
+    ],
+    tags: ["SAP", "ServiceNow", "Salesforce", "SharePoint"],
+  },
+  {
+    role: "Service Desk Analyst",
+    org: "TIVIT · Outsourcing Itaú Unibanco",
+    period: "Oct 2019 – Feb 2021 · 1 yr 5 mos",
+    location: "São José dos Campos Area, Brazil",
+    current: false,
+    bullets: [
+      "Worked on the Service Desk serving Itaú Unibanco, providing technical support and customer service.",
+    ],
+    tags: ["ServiceNow"],
+  },
+]
+
+const projects = [
+  {
     title: "Fuel Prices — World vs Asia",
-    subtitle: "Python, Streamlit, Plotly",
-    imageSrc: "/images/project-3.webp",
+    desc: "Exploratory analysis of global fuel prices with Python, Streamlit and Plotly.",
     tags: ["Python", "Streamlit", "Plotly", "Kaggle"],
     href: "https://fuel-prices-wordvsasia.streamlit.app/",
-    priority: false,
-    gradientFrom: "#0f2027",
-    gradientTo: "#1a3a2a",
+    featured: true,
   },
   {
-    title: "Taskly — Helpdesk Platform",
-    subtitle: ".NET 8, React, PostgreSQL (Supabase)",
-    imageSrc: "/images/project-4.webp",
-    tags: [".NET", "React", "PostgreSQL", "Supabase", "JWT"],
+    title: "Financial Transaction API",
+    desc: "Transactional API with JWT authentication and Entity Framework on PostgreSQL.",
+    tags: ["ASP.NET Core 8", "PostgreSQL", "JWT"],
+    href: "https://financial-transaction-frontend-six.vercel.app/",
+    featured: false,
+  },
+  {
+    title: "Taskly — Helpdesk",
+    desc: "Ticket management platform with a .NET 8 backend and Supabase database.",
+    tags: [".NET 8", "React", "Supabase"],
     href: "https://tickets-manager-api.vercel.app",
-    priority: false,
-    gradientFrom: "#111827",
-    gradientTo: "#4f46e5",
+    featured: false,
   },
   {
     title: "Currency Converter",
-    subtitle: "JavaScript React",
-    imageSrc: "/images/project-1.webp",
+    desc: "Real-time currency converter consuming an external exchange-rate API.",
     tags: ["React", "JavaScript", "API"],
     href: "https://firstcurrencyconverter.netlify.app",
-    priority: false,
-    gradientFrom: "#0f172a",
-    gradientTo: "#6d28d9",
+    featured: false,
   },
   {
-    title: "Login",
-    subtitle: "HTML, CSS, Javascript",
-    imageSrc: "/images/project-2.webp",
-    tags: ["HTML", "CSS", "JavaScript"],
-    href: "https://loginmodern.netlify.app",
-    priority: false,
-    gradientFrom: "#111827",
-    gradientTo: "#2563eb",
-  },
-  {
-    title: "Catalogo Netflix",
-    subtitle: "Javascript, React",
-    imageSrc: "/images/project-6.webp",
-    tags: ["React", "Bootstrap", "JavaScript"],
+    title: "Netflix Catalog",
+    desc: "Movie and TV series catalog with dynamic genre filtering.",
+    tags: ["React", "Bootstrap"],
     href: "https://catalogoflix.netlify.app",
-    priority: false,
-    gradientFrom: "#0b132b",
-    gradientTo: "#5bc0be",
+    featured: false,
   },
 ]
+
+const stack = [
+  { label: "Data & ETL", items: ["SQL Server", "T-SQL", "Python", "ETL Pipelines", "Dimensional Modeling"] },
+  { label: "BI & Analytics", items: ["Power BI", "DAX", "VBA"] },
+  { label: "Dev & Integration", items: ["ASP.NET Core", "Node.js", "TypeScript", "REST APIs", "Git"] },
+  { label: "Enterprise Systems", items: ["SAP ERP", "Microsoft Dynamics CRM", "ServiceNow", "Salesforce"] },
+]
+
+const languages = [
+  { name: "Portuguese", level: "Native" },
+  { name: "English", level: "Professional" },
+]
+
+const certifications: { name: string; href: string | null }[] = [
+  {
+    name: "Google Data Analytics Certificate (PT)",
+    href: "https://www.coursera.org/account/accomplishments/professional-cert/7F8EGQLXUMPH",
+  },
+  {
+    name: "Software Engineering — FIAP",
+    href: "https://on.fiap.com.br/local/nanocourses/gerar_certificado.php?chave=2a36cca9009239de63d077454f70fab6&action=view",
+  },
+  {
+    name: "Microsoft Power BI para Data Science, Versão 2.0",
+    href: "https://mycourse.app/cJYkUcHqnQRdcRRg8",
+  },
+  {
+    name: "EF English Live — EF Level 7, Intermediate (CEFR B1)",
+    href: null,
+  },
+]
+
+const SPARK_PATH =
+  "M0 46 L55 40 L110 43 L165 34 L220 38 L275 26 L330 31 L385 20 L440 25 L495 15 L550 19 L605 11 L660 15 L715 7 L752 9"
+
+const contactLinkClass =
+  "font-mono text-[13px] text-blue underline-offset-4 transition-colors hover:text-navy hover:underline"
+
+function ContactLinks() {
   return (
-    <main className="bg-neutral-950 text-white">
-      {/* HERO: full-viewport row. Left is sticky; right scrolls internally. */}
-      <section className="px-4 pt-4 pb-16 lg:pb-4">
-        <div className="grid h-full grid-cols-1 gap-4 lg:grid-cols-[700px_1fr]">
-          {/* LEFT: sticky and full height, no cut off */}
-          <aside className="lg:sticky lg:top-4 lg:h-[calc(100svh-2rem)]">
-            <RevealOnView
-              as="div"
-              intensity="hero"
-              className="relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-neutral-900/60 p-6 sm:p-8"
-              staggerChildren
-            >
-              {/* Texture background */}
-              <div className="pointer-events-none absolute inset-0 opacity-5 mix-blend-soft-light">
-                <DotGridShader />
+    <div className="flex flex-wrap gap-x-6 gap-y-2">
+      <Link
+        href="https://www.linkedin.com/in/rodrigo-hipolito-silva/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={contactLinkClass}
+      >
+        LinkedIn <span aria-hidden="true">↗</span>
+      </Link>
+      <Link href="mailto:rodrigohsilvaa@gmail.com" className={contactLinkClass}>
+        Email
+      </Link>
+      <Link href="tel:+351937913836" className={contactLinkClass}>
+        +351 937 913 836
+      </Link>
+      <Link href="/RodrigoSilva_CV.pdf" target="_blank" download="Rodrigo_Silva_CV.pdf" className={contactLinkClass}>
+        Download CV <span aria-hidden="true">↓</span>
+      </Link>
+    </div>
+  )
+}
+
+function SectionHeading({ index, title }: { index: string; title: string }) {
+  return (
+    <div className="mb-8 flex items-center gap-4">
+      <h2 className="shrink-0 font-mono text-[11px] font-medium tracking-[0.25em] text-ink-muted">
+        <span className="text-blue">{index}</span>
+        <span className="ml-3">{title}</span>
+      </h2>
+      <span className="h-px flex-1 bg-hairline" aria-hidden="true" />
+    </div>
+  )
+}
+
+export default function Page() {
+  return (
+    <main className="min-h-screen bg-canvas text-ink">
+      <SiteNav />
+      <div className="mx-auto max-w-[760px] px-6 pb-24 pt-10 sm:pt-14">
+        {/* Top bar */}
+        <header className="fade-rise">
+          <p className="font-mono text-[11px] tracking-wider text-ink-muted">38.57°N · 7.98°W — ÉVORA / LISBON, PT</p>
+        </header>
+
+        {/* Hero — report header */}
+        <section className="mt-16 sm:mt-20">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-5">
+            <Image
+              src="/images/Profile.png"
+              alt="Rodrigo Silva"
+              width={92}
+              height={92}
+              priority
+              className="fade-rise h-[92px] w-[92px] rounded-full border-2 border-blue-tint object-cover ring-1 ring-blue"
+            />
+            <div>
+              <h1 className="fade-rise text-4xl font-bold tracking-tight text-navy sm:text-5xl [animation-delay:60ms]">
+                Hi, my name is Rodrigo Silva
+              </h1>
+              <p className="fade-rise mt-3 font-mono text-xs font-medium tracking-[0.3em] text-blue [animation-delay:120ms]">
+                DATA & ANALYTICS ENGINEER
+              </p>
+            </div>
+          </div>
+          <p className="fade-rise mt-5 max-w-[58ch] text-base leading-relaxed text-ink-soft [animation-delay:180ms]">
+            Data & Analytics Engineer based in Lisbon, Portugal, with 4+ years in SQL Server, ETL pipelines,
+            dimensional modeling and Power BI / DAX across telecommunications and consulting sectors.
+          </p>
+
+          <div className="fade-rise mt-6 w-fit max-w-full rounded-lg border border-hairline-blue bg-surface px-4 py-3 font-mono text-[13px] text-ink [animation-delay:210ms]">
+            <span className="text-ink-soft">SELECT</span> focus <span className="text-ink-soft">FROM</span> career{" "}
+            <span className="text-ink-soft">WHERE</span> profile ={" "}
+            <span className="query-typewriter" aria-hidden="true" />
+            <span className="sr-only">&apos;analytics engineer&apos;</span>
+          </div>
+
+          <div className="fade-rise mt-7 [animation-delay:240ms]">
+            <ContactLinks />
+          </div>
+
+          {/* KPI strip — thin, report-header style */}
+          <div className="fade-rise mt-10 grid grid-cols-2 border-y border-hairline sm:grid-cols-5 [animation-delay:300ms]">
+            {kpis.map((kpi, i) => (
+              <div
+                key={kpi.label}
+                className={[
+                  "px-4 py-4",
+                  i % 2 === 1 ? "border-l border-hairline" : "",
+                  i >= 2 ? "max-sm:border-t max-sm:border-hairline" : "",
+                  i > 0 ? "sm:border-l sm:border-hairline" : "",
+                ].join(" ")}
+              >
+                <p className="font-mono text-xl font-semibold tracking-tight text-navy">{kpi.value}</p>
+                <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">{kpi.label}</p>
               </div>
-              <div className="flex-1 overflow-y-auto">
-                <div className="mb-8 flex items-center gap-2">
-                  <div className="text-2xl font-extrabold tracking-tight">rodrigo</div>
-                  <div className="h-2 w-2 rounded-full bg-white/60" aria-hidden="true" />
-                </div>
-
-                <AnimatedHeading
-                  className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl"
-                  lines={["Data & Analytics Engineer"]}
-                />
-
-                <p className="mt-4 max-w-[42ch] text-lg text-white/70">
-                  Data & Analytics Engineer based in Lisbon, Portugal, with 3+ years in SQL Server, ETL pipelines, dimensional modeling and Power BI / DAX across telecommunications and consulting sectors.
-                </p>
-
-                <div className="mt-6 flex flex-wrap items-center gap-4">
-                  <Link 
-                    href="https://www.linkedin.com/in/rodrigo-hipolito-silva/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-white/70 hover:text-white transition-colors"
-                  >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                    <span className="text-sm">LinkedIn</span>
-                  </Link>
-                  
-                  <Link 
-                    href="mailto:rodrigohsilvaa@gmail.com"
-                    className="flex items-center gap-2 text-white/70 hover:text-white transition-colors"
-                  >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M0 3v18h24V3H0zm21.518 2L12 12.713 2.482 5h19.036zM2 19V7.183l10 8.104 10-8.104V19H2z"/>
-                    </svg>
-                    <span className="text-sm">Email</span>
-                  </Link>
-                  
-                  <Link 
-                    href="tel:+351937913836"
-                    className="flex items-center gap-2 text-white/70 hover:text-white transition-colors"
-                  >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                    </svg>
-                    <span className="text-sm">+351 937 913 836</span>
-                  </Link>
-                  
-                  <Link 
-                    href="/RodrigoSilva_CV.pdf"
-                    target="_blank"
-                    download="Rodrigo_Silva_CV.pdf"
-                    className="flex items-center gap-2 text-white/70 hover:text-white transition-colors"
-                  >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-5 4h10v-2H7v2z"/>
-                    </svg>
-                    <span className="text-sm">Download CV</span>
-                  </Link>
-                </div>
-
-                <div className="mt-10">
-                  <p className="mb-4 text-xs font-semibold tracking-widest text-white/50">EXPERIENCE</p>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-sm font-semibold text-white">
-                        Technical Specialist – Infrastructure and Data
-                      </h3>
-                      <p className="text-xs text-white/60">MEO / Altice Portugal • Mar 2023 – Present • Lisbon</p>
-                      <ul className="mt-2 space-y-1 list-disc list-inside">
-                        <li className="text-xs text-white/50">Designed and maintained dimensional data models and Power BI / DAX dashboards, delivering consistent sales analytics across commercial teams and supporting data-driven decision-making.</li>
-                        <li className="text-xs text-white/50">Built and maintained ETL pipelines in SQL Server (T-SQL, stored procedures, SQL Agent Jobs), ensuring data consistency, reliability and quality across telecom infrastructure.</li>
-                        <li className="text-xs text-white/50">Migrated data pipelines from Access to SQL Server, improving scalability and reducing manual dependency on legacy systems.</li>
-                        <li className="text-xs text-white/50">Automated operational data workflows using VBA, Macros and SharePoint, significantly reducing manual effort and improving process efficiency.</li>
-                        <li className="text-xs text-white/50">Supported data integration initiatives across enterprise systems, contributing to improved data structure and system scalability.</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-semibold text-white">Software Developer – CRM & Databases</h3>
-                      <p className="text-xs text-white/60">CEDIS • Dec 2022 – Mar 2023 • Lisbon</p>
-                      <ul className="mt-2 space-y-1 list-disc list-inside">
-                        <li className="text-xs text-white/50">Maintained and optimized SQL Server databases using SSMS, performing data corrections, quality checks and troubleshooting to ensure data integrity.</li>
-                        <li className="text-xs text-white/50">Provided technical support and customization for Microsoft Dynamics CRM, ensuring data accuracy and system reliability across client organizations.</li>
-                        <li className="text-xs text-white/50">Collaborated with sports centers and municipal councils on data accuracy initiatives, supporting consistent reporting and operational continuity.</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-semibold text-white">Software Analyst – Manufacturing Systems (MES)</h3>
-                      <p className="text-xs text-white/60">Johnson & Johnson (AS2 Group) • May 2022 – Nov 2022 • São Paulo</p>
-                      <ul className="mt-2 space-y-1 list-disc list-inside">
-                        <li className="text-xs text-white/50">Gathered and analyzed data requirements to support a Manufacturing Execution System (MES) implementation, aligning technical solutions with operational needs.</li>
-                        <li className="text-xs text-white/50">Supported automation of manufacturing data flows, ensuring integration between MES and enterprise systems (ERP/APIs).</li>
-                        <li className="text-xs text-white/50">Assisted in configuration and validation of MES environment, contributing to system reliability and data accuracy in a regulated manufacturing context.</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-semibold text-white">Systems Support Analyst – ERP & IT Services</h3>
-                      <p className="text-xs text-white/60">WEG Electronic Equipments • May 2021 – Apr 2022</p>
-                      <ul className="mt-2 space-y-1 list-disc list-inside">
-                        <li className="text-xs text-white/50">Managed and resolved incidents through ServiceNow and Salesforce, ensuring SLA compliance and consistent service delivery across enterprise operations.</li>
-                        <li className="text-xs text-white/50">Executed controlled changes in SAP ERP systems (ChaRM process) across DEV and QA environments, contributing to data consistency and system stability.</li>
-                        <li className="text-xs text-white/50">Collaborated with technical teams on backlog management and process improvements, supporting operational continuity.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-8">
-                  <p className="mb-3 text-xs font-semibold tracking-widest text-white/50">TECHNICAL SKILLS</p>
-                  <div className="flex flex-wrap gap-2">
-                    {["SQL Server", "T-SQL", "ETL Pipelines", "Dimensional Modeling", "Power BI", "DAX", "dbt (learning)", "SAP ERP", "Microsoft Dynamics CRM", "ServiceNow", "Salesforce", "VBA", "REST APIs", "Git", "ASP.NET Core", "Node.js", "TypeScript"].map(
-                      (skill) => (
-                        <span key={skill} className="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70">
-                          {skill}
-                        </span>
-                      ),
-                    )}
-                  </div>
-                </div>
-
-                <div className="mt-8">
-                  <p className="mb-3 text-xs font-semibold tracking-widest text-white/50">LANGUAGES</p>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-sm text-white">Portuguese</span>
-                      <span className="text-xs text-white/60">Native</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-sm text-white">English</span>
-                      <span className="text-xs text-white/60">Professional</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-8">
-                  <p className="mb-3 text-xs font-semibold tracking-widest text-white/50">EDUCATION</p>
-                  <div>
-                    <h3 className="text-sm font-semibold text-white">BSc. Systems Development</h3>
-                    <p className="text-xs text-white/60">Estácio de Sá University • 2022 • Brazil</p>
-                    <p className="text-xs text-white/50">GPA: 3.3</p>
-                  </div>
-                </div>
-
-                <div className="mt-8">
-                  <p className="mb-3 text-xs font-semibold tracking-widest text-white/50">COMPANIES I'VE WORKED WITH</p>
-                  <ul className="grid grid-cols-2 gap-x-6 gap-y-3 text-lg font-black text-white/25">
-                    <li>MEO</li>
-                    <li>CEDIS</li>
-                    <li>Johnson & Johnson</li>
-                    <li>WEG</li>
-                  </ul>
-                </div>
-              </div>
-            </RevealOnView>
-          </aside>
-
-          {/* RIGHT: simplified, no internal card or horizontal carousel */}
-          <div className="space-y-4">
-            {projects.map((p, idx) => (
-              <ProjectCard
-                key={p.title}
-                title={p.title}
-                subtitle={p.subtitle}
-                imageSrc={p.imageSrc}
-                tags={p.tags}
-                href={p.href}
-                priority={p.priority}
-                gradientFrom={p.gradientFrom}
-                gradientTo={p.gradientTo}
-                imageContainerClassName="lg:h-full"
-                containerClassName="lg:h-[calc(100svh-2rem)]"
-                revealDelay={idx * 0.06}
-              />
             ))}
           </div>
+        </section>
+
+        {/* Signature sparkline divider — used once */}
+        <div className="mt-14 sm:mt-16" aria-hidden="true">
+          <svg viewBox="0 0 760 56" fill="none" preserveAspectRatio="none" className="h-10 w-full sm:h-12">
+            <defs>
+              <linearGradient id="spark-fill-gradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="var(--blue)" stopOpacity="0.12" />
+                <stop offset="100%" stopColor="var(--blue)" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+            <path className="spark-fill" d={`${SPARK_PATH} L752 56 L0 56 Z`} fill="url(#spark-fill-gradient)" />
+            <path
+              className="spark-line"
+              d={SPARK_PATH}
+              stroke="var(--blue)"
+              strokeWidth="1.5"
+              strokeOpacity="0.55"
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              vectorEffect="non-scaling-stroke"
+            />
+            <circle className="spark-dot" cx="752" cy="9" r="3" fill="var(--blue)" />
+          </svg>
         </div>
-      </section>
+
+        <div className="mt-16 space-y-20 sm:space-y-24">
+          {/* Experience — vertical timeline */}
+          <section id="experiencia" className="scroll-mt-20">
+            <SectionHeading index="01" title="EXPERIENCE" />
+            <div className="relative">
+              <span className="absolute bottom-2 left-[5px] top-2 w-px bg-hairline" aria-hidden="true" />
+              <ol className="space-y-12">
+                {experience.map((exp) => (
+                  <li key={exp.role} className="relative pl-8">
+                    {exp.current && (
+                      <span className="absolute bottom-0 left-[5px] top-2 w-px bg-blue" aria-hidden="true" />
+                    )}
+                    <span
+                      className={[
+                        "absolute left-0 top-[5px] h-[11px] w-[11px] rounded-full",
+                        exp.current ? "bg-blue" : "border border-ink-muted bg-surface",
+                      ].join(" ")}
+                      aria-hidden="true"
+                    />
+                    <h3 className="text-[15px] font-semibold text-ink">{exp.role}</h3>
+                    <p className="mt-1 font-mono text-xs text-ink-muted">
+                      {exp.org} · {exp.period}
+                      {exp.location ? ` · ${exp.location}` : ""}
+                    </p>
+                    <ul className="mt-3 list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-ink-soft marker:text-ink-muted">
+                      {exp.bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                    {exp.tags && exp.tags.length > 0 && (
+                      <div className="mt-3 flex flex-wrap gap-1.5">
+                        {exp.tags.map((tag) => (
+                          <span key={tag} className="rounded bg-blue-tint px-2 py-0.5 font-mono text-[11px] text-navy">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </section>
+
+          {/* Projects — technical catalog list */}
+          <section id="projetos" className="scroll-mt-20">
+            <SectionHeading index="02" title="PROJECTS" />
+            <div className="divide-y divide-hairline border-y border-hairline">
+              {projects.map((proj) => (
+                <a
+                  key={proj.title}
+                  href={proj.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group grid gap-x-8 gap-y-3 py-5 sm:grid-cols-[minmax(0,1fr)_auto]"
+                >
+                  <div>
+                    {proj.featured && (
+                      <p className="mb-2 font-mono text-[10px] font-medium tracking-[0.25em] text-blue">
+                        FEATURED · DATA VIZ
+                      </p>
+                    )}
+                    <h3 className="text-[15px] font-semibold text-ink transition-colors group-hover:text-blue">
+                      {proj.title}
+                      <span
+                        className="ml-2 inline-block font-mono text-xs text-ink-muted transition-transform group-hover:translate-x-0.5 group-hover:text-blue"
+                        aria-hidden="true"
+                      >
+                        ↗
+                      </span>
+                    </h3>
+                    <p className="mt-1 text-sm text-ink-soft">{proj.desc}</p>
+                  </div>
+                  <div className="flex flex-wrap items-start gap-1.5 sm:max-w-[240px] sm:justify-end sm:pt-1">
+                    {proj.tags.map((tag) => (
+                      <span key={tag} className="rounded bg-blue-tint px-2 py-0.5 font-mono text-[11px] text-navy">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+
+          {/* Stack — bordered category cards */}
+          <section id="stack" className="scroll-mt-20">
+            <SectionHeading index="03" title="TECH STACK" />
+            <div className="grid gap-4 sm:grid-cols-2">
+              {stack.map((cat) => (
+                <div key={cat.label} className="rounded-lg border border-hairline-blue bg-surface p-5">
+                  <p className="font-mono text-[10px] font-medium tracking-[0.25em] text-navy">
+                    {cat.label.toUpperCase()}
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {cat.items.map((skill) => (
+                      <span key={skill} className="rounded bg-blue-tint px-2 py-0.5 font-mono text-[11px] text-navy">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Education + Languages */}
+          <section id="educacao" className="scroll-mt-20">
+            <SectionHeading index="04" title="EDUCATION & LANGUAGES" />
+            <div className="grid gap-10 sm:grid-cols-2">
+              <div>
+                <p className="font-mono text-[10px] tracking-[0.25em] text-ink-muted">EDUCATION</p>
+                <h3 className="mt-3 text-[15px] font-semibold text-ink">BSc. Systems Development</h3>
+                <p className="mt-1 font-mono text-xs text-ink-muted">Estácio de Sá University · 2022 · Brazil</p>
+                <p className="mt-1 text-sm text-ink-soft">GPA: 3.3</p>
+
+                <p className="mt-8 font-mono text-[10px] tracking-[0.25em] text-ink-muted">CERTIFICATIONS</p>
+                <ul className="mt-3 space-y-2">
+                  {certifications.map((cert) => (
+                    <li key={cert.name} className="text-sm leading-relaxed">
+                      {cert.href ? (
+                        <a
+                          href={cert.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue underline-offset-4 transition-colors hover:text-navy hover:underline"
+                        >
+                          {cert.name}
+                          <span className="ml-1.5 font-mono text-xs" aria-hidden="true">
+                            ↗
+                          </span>
+                        </a>
+                      ) : (
+                        <span className="text-ink-soft">{cert.name}</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="font-mono text-[10px] tracking-[0.25em] text-ink-muted">LANGUAGES</p>
+                <div className="mt-3 space-y-2.5">
+                  {languages.map((lang) => (
+                    <div
+                      key={lang.name}
+                      className="flex items-baseline justify-between gap-4 border-b border-hairline pb-2.5"
+                    >
+                      <span className="text-sm font-medium text-ink">{lang.name}</span>
+                      <span className="font-mono text-xs uppercase tracking-wider text-ink-muted">{lang.level}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        {/* Footer */}
+        <footer id="contato" className="mt-20 scroll-mt-20 border-t border-hairline pt-8 sm:mt-24">
+          <p className="font-mono text-[10px] tracking-[0.25em] text-ink-muted">{"COMPANIES I'VE WORKED WITH"}</p>
+          <p className="mt-2 text-sm font-medium text-ink-soft">
+            MEO · CEDIS · Johnson & Johnson · WEG (via Algar Tech) · Itaú Unibanco (via TIVIT)
+          </p>
+          <div className="mt-8 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-4">
+            <ContactLinks />
+            <p className="font-mono text-[11px] text-ink-muted">Rodrigo Silva — Data & Analytics Engineer</p>
+          </div>
+        </footer>
+      </div>
     </main>
   )
 }

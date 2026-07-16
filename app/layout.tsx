@@ -90,7 +90,7 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="theme-color" content="#0a0a0a" />
+        <meta name="theme-color" content="#0B1220" />
         <meta name="color-scheme" content="dark" />
         
         {/* Preconnect for performance */}
@@ -114,7 +114,7 @@ export default function RootLayout({
         {/* Additional meta tags for backend/tech focus */}
         <meta name="application-name" content="Rodrigo Silva Portfolio" />
         <meta name="apple-mobile-web-app-title" content="Rodrigo Portfolio" />
-        <meta name="msapplication-TileColor" content="#0a0a0a" />
+        <meta name="msapplication-TileColor" content="#0B1220" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
         
         {/* Structured data for rich snippets */}

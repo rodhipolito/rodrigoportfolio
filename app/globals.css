@@ -4,74 +4,55 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  color-scheme: dark;
+
+  /* ---- Analytics-report palette (dark + blue) ---- */
+  --bg: #0b1220;
+  --surface: #121a2b;
+  --ink: #e8edf7;
+  --ink-soft: #9fb0cc;
+  --muted: #7c8ca5;
+  --navy: #6ea8ff;
+  --blue: #3b82f6;
+  --blue-tint: rgba(59, 130, 246, 0.12);
+
+  /* Derived hairlines (dividers / card borders) */
+  --hairline: rgba(255, 255, 255, 0.08);
+  --hairline-blue: rgba(59, 130, 246, 0.3);
+
+  /* shadcn tokens mapped onto the palette */
+  --background: var(--bg);
+  --foreground: var(--ink);
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --popover: var(--surface);
+  --popover-foreground: var(--ink);
+  --primary: var(--navy);
+  --primary-foreground: var(--bg);
+  --secondary: var(--blue-tint);
+  --secondary-foreground: var(--navy);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--blue-tint);
+  --accent-foreground: var(--navy);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: var(--hairline);
+  --input: var(--hairline);
+  --ring: var(--blue);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
-
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --radius: 0.5rem;
+  --sidebar: var(--surface);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--navy);
+  --sidebar-primary-foreground: var(--bg);
+  --sidebar-accent: var(--blue-tint);
+  --sidebar-accent-foreground: var(--navy);
+  --sidebar-border: var(--hairline);
+  --sidebar-ring: var(--blue);
 }
 
 @theme inline {
@@ -111,13 +92,180 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Report palette utilities */
+  --color-canvas: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-muted: var(--muted);
+  --color-navy: var(--navy);
+  --color-blue: var(--blue);
+  --color-blue-tint: var(--blue-tint);
+  --color-hairline: var(--hairline);
+  --color-hairline-blue: var(--hairline-blue);
+
+  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+  }
+  ::selection {
+    background: var(--navy);
+    color: var(--bg);
+  }
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+/* Page-load reveal: hero elements only, staggered via [animation-delay:*] */
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fade-rise {
+  animation: fade-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Signature divider: sparkline drawn once between hero and content */
+@keyframes spark-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes spark-appear {
+  to {
+    opacity: 1;
+  }
+}
+.spark-line {
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: spark-draw 1.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+}
+.spark-fill {
+  opacity: 0;
+  animation: spark-appear 0.9s ease-out 1.2s forwards;
+}
+.spark-dot {
+  opacity: 0;
+  animation: spark-appear 0.4s ease-out 2s forwards;
+}
+
+/* Hero query block: CSS-only typewriter cycling three phrases.
+   Width is animated in `ch` (exact char count per phrase, Geist Mono is
+   monospaced) so the caret always sits at the end of the typed text. */
+@keyframes caret-blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes query-width {
+  0% {
+    width: 0;
+    animation-timing-function: steps(20, end);
+  }
+  10% {
+    width: 20ch;
+  }
+  26.67% {
+    width: 20ch;
+    animation-timing-function: steps(20, end);
+  }
+  33.33% {
+    width: 0;
+    animation-timing-function: steps(23, end);
+  }
+  43.33% {
+    width: 23ch;
+  }
+  60% {
+    width: 23ch;
+    animation-timing-function: steps(23, end);
+  }
+  66.67% {
+    width: 0;
+    animation-timing-function: steps(24, end);
+  }
+  76.67% {
+    width: 24ch;
+  }
+  93.33% {
+    width: 24ch;
+    animation-timing-function: steps(24, end);
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes query-content {
+  0%,
+  33.32% {
+    content: "'analytics engineer'";
+  }
+  33.33%,
+  66.65% {
+    content: "'sql server + power bi'";
+  }
+  66.66%,
+  100% {
+    content: "'pipelines + dashboards'";
+  }
+}
+.query-typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  color: var(--blue);
+  border-right: 2px solid var(--blue);
+  animation:
+    query-width 15s infinite,
+    caret-blink 0.75s step-end infinite;
+}
+.query-typewriter::before {
+  content: "'analytics engineer'";
+  animation: query-content 15s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-rise,
+  .spark-line,
+  .spark-fill,
+  .spark-dot {
+    animation: none;
+    opacity: 1;
+  }
+  .spark-line {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+  }
+  .query-typewriter {
+    animation: none;
+    width: auto;
+  }
+  .query-typewriter::before {
+    animation: none;
   }
 }
