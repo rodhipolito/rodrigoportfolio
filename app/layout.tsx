@@ -5,7 +5,7 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "Rodrigo Silva - Data & Analytics Engineer",
   description:
-    "Data & Analytics Engineer specializing in SQL Server, T-SQL, ETL pipelines, Power BI/DAX and dimensional modeling. Experience at MEO/Altice Portugal, CEDIS, Johnson & Johnson and WEG. Based in Lisbon, Portugal.",
+    "Data & Analytics Engineer specializing in SQL Server, T-SQL, ETL pipelines, Power BI/DAX and dimensional modeling. Experience at MEO/Altice Portugal, CEDIS, Johnson & Johnson, WEG (via Algar Tech) and Itaú Unibanco (via TIVIT). Based in Lisbon, Portugal.",
   keywords: [
     "Analytics Engineer",
     "Data Engineer",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "ETL",
     "Power BI",
     "DAX",
-    "dbt",
+    "Python",
     "Dimensional Modeling",
     "Data Pipelines",
     "Portugal",
@@ -22,7 +22,9 @@ export const metadata: Metadata = {
     "MEO",
     "CEDIS",
     "Johnson & Johnson",
-    "WEG"
+    "WEG",
+    "Algar Tech",
+    "TIVIT"
   ],
   authors: [{ name: "Rodrigo Silva" }],
   creator: "Rodrigo Silva",
@@ -38,15 +40,15 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Rodrigo Silva - Data & Analytics Engineer",
-    description: "Data & Analytics Engineer specializing in SQL Server, T-SQL, ETL pipelines, Power BI/DAX and dimensional modeling. Experience at MEO/Altice Portugal, CEDIS, Johnson & Johnson and WEG.",
+    description: "Data & Analytics Engineer specializing in SQL Server, T-SQL, ETL pipelines, Power BI/DAX and dimensional modeling. Experience at MEO/Altice Portugal, CEDIS, Johnson & Johnson, WEG (via Algar Tech) and Itaú Unibanco (via TIVIT).",
     url: "https://rodrigo-portfolio.vercel.app",
     siteName: "Rodrigo Silva Portfolio",
     images: [
       {
-        url: "/images/portfolio-sample.png",
-        width: 1200,
-        height: 630,
-        alt: "Rodrigo Silva - Data & Analytics Engineer Portfolio",
+        url: "/images/Profile.png",
+        width: 1254,
+        height: 1254,
+        alt: "Rodrigo Silva - Data & Analytics Engineer",
       },
     ],
     locale: "en_US",
@@ -56,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Rodrigo Silva - Data & Analytics Engineer",
     description: "Data & Analytics Engineer specializing in SQL Server, T-SQL, ETL pipelines, Power BI/DAX and dimensional modeling.",
-    images: ["/images/portfolio-sample.png"],
+    images: ["/images/Profile.png"],
     creator: "@rodrigosilva",
   },
   robots: {
@@ -69,11 +71,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
   },
   category: "technology",
   classification: "Portfolio",
@@ -129,7 +126,7 @@ export default function RootLayout({
               "description": "Data & Analytics Engineer specializing in SQL Server, T-SQL, ETL pipelines, Power BI/DAX and dimensional modeling.",
               "url": "https://rodrigo-portfolio.vercel.app",
               "sameAs": [
-                "https://www.linkedin.com/in/rodrigo-hipolito1/"
+                "https://www.linkedin.com/in/rodrigo-hipolito-silva/"
               ],
               "worksFor": [
                 {
@@ -149,12 +146,17 @@ export default function RootLayout({
                 },
                 {
                   "@type": "Organization",
-                  "name": "WEG Electronic Equipments",
+                  "name": "Algar Tech (Outsourcing Itaú Unibanco)",
                   "jobTitle": "Systems Support Analyst – ERP & IT Services"
+                },
+                {
+                  "@type": "Organization",
+                  "name": "TIVIT (Outsourcing Itaú Unibanco)",
+                  "jobTitle": "Service Desk Analyst"
                 }
               ],
               "knowsAbout": [
-                "SQL Server", "T-SQL", "ETL Pipelines", "Dimensional Modeling", "Power BI", "DAX", "dbt", "SAP ERP", "Microsoft Dynamics CRM", "ServiceNow", "Salesforce", "VBA", "REST APIs", "Git", "ASP.NET Core", "Node.js", "TypeScript"
+                "SQL Server", "T-SQL", "ETL Pipelines", "Dimensional Modeling", "Power BI", "DAX", "Python", "SAP ERP", "Microsoft Dynamics CRM", "ServiceNow", "Salesforce", "VBA", "REST APIs", "Git", "ASP.NET Core", "Node.js", "TypeScript"
               ],
               "address": {
                 "@type": "PostalAddress",
