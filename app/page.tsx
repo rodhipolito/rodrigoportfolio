@@ -215,7 +215,7 @@ export default function Page() {
       <SiteNav />
       <div className="mx-auto max-w-[760px] px-6 pb-24 pt-10 sm:pt-14">
         {/* Hero — report header */}
-        <section className="mt-10 sm:mt-14">
+        <section>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-5">
             <Image
               src="/images/Profile.png"
