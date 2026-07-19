@@ -59,7 +59,6 @@ export const metadata: Metadata = {
     title: "Rodrigo Silva - Data & Analytics Engineer",
     description: "Data & Analytics Engineer specializing in SQL Server, T-SQL, ETL pipelines, Power BI/DAX and dimensional modeling.",
     images: ["/images/Profile.png"],
-    creator: "@rodrigosilva",
   },
   robots: {
     index: true,

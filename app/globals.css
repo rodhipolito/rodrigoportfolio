@@ -176,11 +176,6 @@
 /* Hero query block: CSS-only typewriter cycling three phrases.
    Width is animated in `ch` (exact char count per phrase, Geist Mono is
    monospaced) so the caret always sits at the end of the typed text. */
-@keyframes caret-blink {
-  50% {
-    border-color: transparent;
-  }
-}
 @keyframes query-width {
   0% {
     width: 0;
@@ -240,9 +235,7 @@
   vertical-align: bottom;
   color: var(--blue);
   border-right: 2px solid var(--blue);
-  animation:
-    query-width 15s infinite,
-    caret-blink 0.75s step-end infinite;
+  animation: query-width 15s infinite;
 }
 .query-typewriter::before {
   content: "'analytics engineer'";
