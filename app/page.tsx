@@ -214,13 +214,8 @@ export default function Page() {
     <main className="min-h-screen bg-canvas text-ink">
       <SiteNav />
       <div className="mx-auto max-w-[760px] px-6 pb-24 pt-10 sm:pt-14">
-        {/* Top bar */}
-        <header className="fade-rise">
-          <p className="font-mono text-[11px] tracking-wider text-ink-muted">38.57°N · 7.98°W — ÉVORA / LISBON, PT</p>
-        </header>
-
         {/* Hero — report header */}
-        <section className="mt-16 sm:mt-20">
+        <section className="mt-10 sm:mt-14">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-5">
             <Image
               src="/images/Profile.png"
