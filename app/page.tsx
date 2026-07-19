@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import MouseGlow from "@/components/mouse-glow"
 import SiteNav from "@/components/site-nav"
 
 const kpis = [
@@ -213,6 +214,7 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-canvas text-ink">
       <SiteNav />
+      <MouseGlow />
       <div className="mx-auto max-w-[760px] px-6 pb-24 pt-10 sm:pt-14">
         {/* Hero — report header */}
         <section>
