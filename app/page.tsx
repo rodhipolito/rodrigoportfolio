@@ -158,8 +158,17 @@ const certifications: { name: string; href: string | null }[] = [
   },
 ]
 
-const SPARK_PATH =
-  "M0 46 L55 40 L110 43 L165 34 L220 38 L275 26 L330 31 L385 20 L440 25 L495 15 L550 19 L605 11 L660 15 L715 7 L752 9"
+// Career sparkline: x mapped from months since Oct 2019 (0..81 → 4..752),
+// y rises with each company change. One node per real milestone.
+const careerMilestones = [
+  { x: 4, y: 48, label: "TIVIT · Oct 2019" },
+  { x: 152, y: 40, label: "Algar Tech · Feb 2021" },
+  { x: 290, y: 30, label: "Johnson & Johnson · May 2022" },
+  { x: 355, y: 24, label: "CEDIS · Dec 2022" },
+  { x: 383, y: 16, label: "MEO / Altice Portugal · Mar 2023" },
+]
+
+const SPARK_PATH = "M4 48 L152 40 L290 30 L355 24 L383 16 L752 8"
 
 const contactLinkClass =
   "font-mono text-[13px] text-blue underline-offset-4 transition-colors hover:text-navy hover:underline"
@@ -265,16 +274,22 @@ export default function Page() {
           </div>
         </section>
 
-        {/* Signature sparkline divider — used once */}
-        <div className="mt-14 sm:mt-16" aria-hidden="true">
-          <svg viewBox="0 0 760 56" fill="none" preserveAspectRatio="none" className="h-10 w-full sm:h-12">
+        {/* Signature sparkline — career timeline with one node per company */}
+        <div className="mt-14 sm:mt-16">
+          <svg
+            viewBox="0 0 760 56"
+            fill="none"
+            className="w-full"
+            role="img"
+            aria-label="Career timeline from 2019 to present: TIVIT, Algar Tech, Johnson & Johnson, CEDIS, MEO / Altice Portugal"
+          >
             <defs>
               <linearGradient id="spark-fill-gradient" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="var(--blue)" stopOpacity="0.12" />
                 <stop offset="100%" stopColor="var(--blue)" stopOpacity="0" />
               </linearGradient>
             </defs>
-            <path className="spark-fill" d={`${SPARK_PATH} L752 56 L0 56 Z`} fill="url(#spark-fill-gradient)" />
+            <path className="spark-fill" d={`${SPARK_PATH} L752 56 L4 56 Z`} fill="url(#spark-fill-gradient)" />
             <path
               className="spark-line"
               d={SPARK_PATH}
@@ -283,10 +298,27 @@ export default function Page() {
               strokeOpacity="0.55"
               strokeLinejoin="round"
               strokeLinecap="round"
-              vectorEffect="non-scaling-stroke"
             />
-            <circle className="spark-dot" cx="752" cy="9" r="3" fill="var(--blue)" />
+            {careerMilestones.map((milestone) => (
+              <circle
+                key={milestone.label}
+                className="spark-dot"
+                cx={milestone.x}
+                cy={milestone.y}
+                r="3"
+                fill="var(--blue)"
+              >
+                <title>{milestone.label}</title>
+              </circle>
+            ))}
+            <circle className="spark-dot" cx="752" cy="8" r="3.5" fill="var(--blue)">
+              <title>Present · MEO / Altice Portugal</title>
+            </circle>
           </svg>
+          <div className="mt-1.5 flex justify-between font-mono text-[10px] tracking-wider text-ink-muted">
+            <span>2019</span>
+            <span>PRESENT</span>
+          </div>
         </div>
 
         <div className="mt-16 space-y-20 sm:space-y-24">

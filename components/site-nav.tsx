@@ -59,13 +59,19 @@ export default function SiteNav() {
       style={{ background: "color-mix(in srgb, var(--surface) 78%, transparent)" }}
     >
       <div className="mx-auto flex h-14 max-w-[760px] items-center justify-between gap-6 px-6">
-        <span
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue text-sm font-bold tracking-tight text-canvas"
-          role="img"
-          aria-label="Rodrigo Silva"
+        <button
+          type="button"
+          onClick={() =>
+            window.scrollTo({
+              top: 0,
+              behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+            })
+          }
+          aria-label="Rodrigo Silva — back to top"
+          className="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-lg bg-blue text-sm font-bold tracking-tight text-canvas"
         >
           RS
-        </span>
+        </button>
 
         <div className="flex items-center gap-5 overflow-x-auto whitespace-nowrap [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {sections.map((section) => (
