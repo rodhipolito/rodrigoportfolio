@@ -98,6 +98,20 @@ const projects = [
     featured: true,
   },
   {
+    title: "Netflix Catalog",
+    desc: "Movie and TV series catalog with dynamic genre filtering.",
+    tags: ["React", "Bootstrap"],
+    href: "https://catalogoflix.netlify.app",
+    featured: false,
+  },
+  {
+    title: "Currency Converter",
+    desc: "Real-time currency converter consuming an external exchange-rate API.",
+    tags: ["React", "JavaScript", "API"],
+    href: "https://firstcurrencyconverter.netlify.app",
+    featured: false,
+  },
+  {
     title: "Financial Transaction API",
     desc: "Transactional API with JWT authentication and Entity Framework on PostgreSQL.",
     tags: ["ASP.NET Core 8", "PostgreSQL", "JWT"],
@@ -109,20 +123,6 @@ const projects = [
     desc: "Ticket management platform with a .NET 8 backend and Supabase database.",
     tags: [".NET 8", "React", "Supabase"],
     href: "https://tickets-manager-api.vercel.app",
-    featured: false,
-  },
-  {
-    title: "Currency Converter",
-    desc: "Real-time currency converter consuming an external exchange-rate API.",
-    tags: ["React", "JavaScript", "API"],
-    href: "https://firstcurrencyconverter.netlify.app",
-    featured: false,
-  },
-  {
-    title: "Netflix Catalog",
-    desc: "Movie and TV series catalog with dynamic genre filtering.",
-    tags: ["React", "Bootstrap"],
-    href: "https://catalogoflix.netlify.app",
     featured: false,
   },
 ]
