@@ -139,7 +139,7 @@ const articles: Article[] = [
   {
     title: "Electricity Prices Pipeline — PT vs ES Day-Ahead Market",
     desc: "Data engineering pipeline that extracts, deduplicates and loads day-ahead electricity prices from the ENTSO-E Transparency Platform into Postgres, with an analysis layer on PT/ES market trends.",
-    tags: ["Python", "PostgreSQL", "ENTSO-E API", "Docker"],
+    tags: ["Python", "PostgreSQL", "Neon", "ENTSO-E API", "Docker"],
     href: "https://github.com/rodhipolito/electricity-prices-pt-es",
   },
 ]
