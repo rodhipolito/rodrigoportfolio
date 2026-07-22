@@ -7,6 +7,7 @@ const sections = [
   { id: "projetos", label: "PROJECTS" },
   { id: "stack", label: "STACK" },
   { id: "educacao", label: "EDUCATION" },
+  { id: "artigos", label: "ARTICLES" },
   { id: "contato", label: "CONTACT" },
 ]
 

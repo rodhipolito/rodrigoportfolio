@@ -128,6 +128,22 @@ const projects = [
   },
 ]
 
+type Article = {
+  title: string
+  desc: string
+  tags: string[]
+  href: string
+}
+
+const articles: Article[] = [
+  {
+    title: "Electricity Prices Pipeline — PT vs ES Day-Ahead Market",
+    desc: "Data engineering pipeline that extracts, deduplicates and loads day-ahead electricity prices from the ENTSO-E Transparency Platform into Postgres, with an analysis layer on PT/ES market trends.",
+    tags: ["Python", "PostgreSQL", "ENTSO-E API", "Docker"],
+    href: "https://github.com/rodhipolito/electricity-prices-pt-es",
+  },
+]
+
 const stack = [
   { label: "Data & ETL", items: ["SQL Server", "T-SQL", "Python", "ETL Pipelines", "Dimensional Modeling"] },
   { label: "BI & Analytics", items: ["Power BI", "DAX", "VBA"] },
@@ -471,6 +487,42 @@ export default function Page() {
                   ))}
                 </div>
               </div>
+            </div>
+          </section>
+
+          {/* Articles — writing & technical breakdowns */}
+          <section id="artigos" className="scroll-mt-20">
+            <SectionHeading index="05" title="ARTICLES" />
+            <div className="divide-y divide-hairline border-y border-hairline">
+              {articles.map((article) => (
+                <a
+                  key={article.title}
+                  href={article.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group grid gap-x-8 gap-y-3 py-5 sm:grid-cols-[minmax(0,1fr)_auto]"
+                >
+                  <div>
+                    <h3 className="text-[15px] font-semibold text-ink transition-colors group-hover:text-blue">
+                      {article.title}
+                      <span
+                        className="ml-2 inline-block font-mono text-xs text-ink-muted transition-transform group-hover:translate-x-0.5 group-hover:text-blue"
+                        aria-hidden="true"
+                      >
+                        ↗
+                      </span>
+                    </h3>
+                    <p className="mt-1 text-sm text-ink-soft">{article.desc}</p>
+                  </div>
+                  <div className="flex flex-wrap items-start gap-1.5 sm:max-w-[240px] sm:justify-end sm:pt-1">
+                    {article.tags.map((tag) => (
+                      <span key={tag} className="rounded bg-blue-tint px-2 py-0.5 font-mono text-[11px] text-navy">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </a>
+              ))}
             </div>
           </section>
         </div>
